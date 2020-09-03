@@ -1,6 +1,5 @@
 let express = require('express');
 const app = express();
-let port = process.env.port || 3000;
 
 //import body parser
 let bodyParser = require('body-parser');
@@ -29,6 +28,6 @@ mongo.then(() => {
     console.log(error, 'error');
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
