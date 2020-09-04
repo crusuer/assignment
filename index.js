@@ -7,7 +7,7 @@ let bodyParser = require('body-parser');
 //import mongoose
 let mongoose = require('mongoose');
 //Import routes
-let apiRoutes = require("./routes");
+let apiRoutes = require("./routes/routes");
 
 //Use API routes in the App
 app.use('/api', apiRoutes)
@@ -24,9 +24,9 @@ const dbPath = 'mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mon
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 const mongo = mongoose.connect(dbPath, options);
 mongo.then(() => {
-    console.log('connected');
+    console.log('Connected to MongoDB');
 }, error => {
-    console.log(error, 'error');
+    console.log(error, 'Error while conneting to MongoDB');
 })
 
 app.listen(port, () => {

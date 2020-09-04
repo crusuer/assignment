@@ -2,10 +2,10 @@
 //initialize express router
 let router = require('express').Router();
 //set default API response
-router.post('/', function(req, res) {
+router.post('/fetch', function(req, res) {
     res.json({
         code: 0,
-        msg: 'success',
+        msg: 'Success',
         records: []
     });
 });
